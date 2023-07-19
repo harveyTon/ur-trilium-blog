@@ -7,7 +7,8 @@ $config = [
     'apiToken' => 'SlVTVCBGVUNLIElUIQ==',   // API令牌
     'apiUrl' => 'https://trilium-note-server/etapi',  // API的URL
     'pageSize' => 12,    // 每页显示的笔记数量
-    'siteTitle' => '虎笺',  // 网站标题
+    'siteTitle' => '虎笺',
+    'secondTitle' => 'Tiger\'s Notes',
     'description' => 'This is your site description',   // 网站描述
     'keyWords' => ['notes', 'urtrilium', ' trilium notes'],  // 网站关键词
     'redis' => [   // Redis配置

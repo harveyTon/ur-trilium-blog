@@ -9,7 +9,7 @@
     <meta name="description" content="Tiger's Notes. ">
     <meta name="keywords" content="<?php echo implode(", ", $config['keyWords']); ?>">
     <meta name="author" content="Tiger">
-    <title><?= ($note) ? $note['title'] . " - " . $config['siteTitle'] : $config['siteTitle'] ?></title>
+    <title><?= ($note) ? $note['title'] . " - " . $config['siteTitle'] : $config['siteTitle'] . ' - ' .$config['secondTitle'] ?></title>
     <link rel='stylesheet' href='https://ik.imagekit.io/tigerton/LXGWWenKai-Bold/result.css' />
     <link rel="stylesheet" href="/wp-content/themes/urtrilium/style.css?ver=0.0.8-dev">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
