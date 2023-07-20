@@ -44,7 +44,7 @@ include __DIR__ . '/header.php';
         pageKey: 'note/<?= $note['noteId'] . '.html' ?>',
         pageTitle: '<?= $note['title'] ?>',
         server: 'https://comments.uto.to',
-        site: "Tiger's Note",
+        site: "虎笺",
         imgUpload: false,
         useBackendConf: false,
         emoticons: ["https://cdn.jsdelivr.net/gh/ArtalkJS/Emoticons/grps/default.json"],
