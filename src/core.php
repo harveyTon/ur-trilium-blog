@@ -16,18 +16,23 @@ function isValidNoteId($noteId) {
 
 // 处理 noteImg 参数的逻辑
 if (isset($_GET['noteImg'])) {
-    if (preg_match('/images\/(.*?)\//', urldecode($_GET['noteImg']), $matches) && isValidNoteId($matches[1])) {
+    preg_match('/images\/(.*?)\//', urldecode($_GET['noteImg']), $matches);
+    $noteId = $matches[1];
+    // 为 noteId 设置一个匹配模式
+    // 如果 noteId 不匹配该模式，返回错误信息
+    if(!isValidNoteId($noteId)){
         try {
-            getNoteById($matches[1], 'image', $ignoreCache);
+            getNoteById($noteId, 'image');
         } catch (Exception $e) {
             handleError($e->getMessage());
         }
-    } else {
-        handleError('JUST FUCK IT!');
     }
+    // 如果不是，则输出错误信息并退出
+    handleError('JUST FUCK IT!');
 }
 // 处理 noteId 参数的逻辑
 elseif (isset($_GET['noteId']) && isValidNoteId($_GET['noteId'])) {
+    $templateName = "note";
     $note = getNoteById($_GET['noteId'], 'note');
 }
 // 处理 pageName 参数的逻辑
@@ -36,6 +41,7 @@ elseif (isset($_GET['pageName'])) {
 
     if (in_array($_GET['pageName'], $allowedPages)) {
         $pageName = $_GET['pageName'];
+        $templateName = $pageName;
     } else {
         handleError("JUST FUCK IT!");
     }
