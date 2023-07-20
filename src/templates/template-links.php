@@ -11,7 +11,7 @@ include __DIR__ . '/header.php';
     <div class="note-content">
 
         <!-- 友链说明区域-->
-        <div class="category link-about" id="flinks"><img src="https://tutu.to/ttt_Jnpmve.png" width="24" alt="flink"> &nbsp;友链说明</div>
+        <div class="category link-about" id="flinks"><img src="https://tutu.to/ttt_Jnpmve.png" border="0" align="absmiddle" width="24" alt="flink"> &nbsp;友链说明</div>
         <div class="links">
             <div class="link link-text link-about-text">
                 <p>本站对友情连接申请有几个小要求：</p>
@@ -30,7 +30,7 @@ include __DIR__ . '/header.php';
         </div>
 
         <!-- 特别推荐区域 -->
-        <div class="category special"><img src="https://tutu.to/ttt_0HP9Vk.png" width="24" alt="special"> &nbsp; 机械境</div>
+        <div class="category special"><img src="https://tutu.to/ttt_0HP9Vk.png" border="0" align="absmiddle" width="24" alt="special"> &nbsp; 机械境</div>
         <div class="links">
             <div class="link">
 
@@ -51,7 +51,7 @@ include __DIR__ . '/header.php';
         </div>
 
         <!-- 网络邻居区域 -->
-        <div class="category neighbor"><img src="https://tutu.to/ttt_4nvcBN.png" width="24" alt="neighbor"> &nbsp; 混沌海</div>
+        <div class="category neighbor"><img src="https://tutu.to/ttt_4nvcBN.png" border="0" align="absmiddle" width="24" alt="neighbor"> &nbsp; 混沌海</div>
         <div class="links">
             <div class="link">
 

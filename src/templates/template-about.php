@@ -11,7 +11,7 @@ include __DIR__ . '/header.php';
     <div class="note-content">
 
         <!-- 关于本站区域-->
-        <div class="category special" id="flinks"><img src="https://tutu.to/ttt_0HP9Vk.png" width="24" alt="flink"> &nbsp;关于本站</div>
+        <div class="category special" id="flinks"><img src="https://tutu.to/ttt_0HP9Vk.png" border="0" align="absmiddle" width="24" alt="flink"> &nbsp;关于本站</div>
         <div class="links">
             <div class="link link-text link-about-text">
                 <p>“虎笺”者，吾人个人之记载所也。吾于此处，以技艺之学习与实践经验为众分享。</p>
