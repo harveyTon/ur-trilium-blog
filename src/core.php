@@ -10,7 +10,7 @@ global $note, $pageName;
 $ignoreCache = isset($_GET['ignoreCache']);
 
 // 验证 noteId 的工具函数
-function isValidNoteId($noteId)
+function isValidNoteId($noteId): bool|int
 {
     return preg_match("/^[A-Za-z\d]{12}$/", $noteId);
 }
