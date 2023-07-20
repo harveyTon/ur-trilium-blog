@@ -51,12 +51,12 @@ include __DIR__ . '/header.php';
         pvEl: '#ArtalkPV',
     })
     // 创建灯箱元素
-    var lightbox = document.createElement('div');
+    const lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
     document.body.appendChild(lightbox);
 
     // 创建关闭按钮
-    var closeButton = document.createElement('a');
+    const closeButton = document.createElement('a');
     closeButton.className = 'close';
     closeButton.innerHTML = '&times;';
     closeButton.onclick = function() {
@@ -65,12 +65,12 @@ include __DIR__ . '/header.php';
     lightbox.appendChild(closeButton);
 
     // 创建用于在灯箱中显示的图像元素
-    var lightboxImage = document.createElement('img');
+    const lightboxImage = document.createElement('img');
     lightbox.appendChild(lightboxImage);
 
     // 为每个链接添加一个点击事件处理器
-    var imageLinks = document.getElementsByClassName('image-link');
-    for (var i = 0; i < imageLinks.length; i++) {
+    const imageLinks = document.getElementsByClassName('image-link');
+    for (let i = 0; i < imageLinks.length; i++) {
         imageLinks[i].onclick = function(event) {
             event.preventDefault(); // 阻止链接的默认行为
             lightboxImage.src = this.href; // 设置灯箱图像的src为链接的href
