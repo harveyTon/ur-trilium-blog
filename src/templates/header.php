@@ -24,11 +24,11 @@
     ?>
     <title><?= $title ?></title>
     <link rel='stylesheet' href='https://ik.imagekit.io/tigerton/LXGWWenKai-Bold/result.css' />
-    <link rel="stylesheet" href="/wp-content/themes/urtrilium/style.css?ver=0.0.8-dev">
+    <link rel="stylesheet" href="/wp-content/themes/urtrilium/style.css?ver=0.1.1-dev">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <?php if ($note || $pageName) : ?>
         <link rel="stylesheet" href="/wp-content/themes/urtrilium/libs/prism.css">
-        <link href="https://comments.uto.to/dist/Artalk.css" rel="stylesheet">
+        <link rel="stylesheet" href="/wp-content/themes/urtrilium/libs/Artalk.css">
     <?php endif; ?>
     <script defer data-domain="blog.uto.to" src="https://s.uto.to/js/script.js"></script>
 </head>

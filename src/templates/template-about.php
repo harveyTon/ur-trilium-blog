@@ -32,7 +32,7 @@ include __DIR__ . '/header.php';
     <h3>Comments</h3>
     <div id="comments"></div>
 </div>
-<script src="https://comments.uto.to/dist/Artalk.js"></script>
+<script src="/wp-content/themes/urtrilium/libs/Artalk.js"></script>
 <script>
     new Artalk({
         el: '#comments',

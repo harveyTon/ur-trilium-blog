@@ -37,7 +37,7 @@ include __DIR__ . '/header.php';
 </div>
 
 <script src="/wp-content/themes/urtrilium/libs/prism.js"></script>
-<script src="https://comments.uto.to/dist/Artalk.js"></script>
+<script src="/wp-content/themes/urtrilium/libs/Artalk.js"></script>
 <script>
     new Artalk({
         el: '#comments',
