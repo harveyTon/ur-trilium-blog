@@ -7,6 +7,7 @@ require_once ROOT_DIR . '/wp-includes/functions.php';
 global $note;
 global $pageName;
 
+$ignoreCache = isset($_GET['ignoreCache']) ? true : false;
 
 if (isset($_GET['noteImg'])) {
     preg_match('/images\/(.*?)\//', urldecode($_GET['noteImg']), $matches);
@@ -19,7 +20,7 @@ if (isset($_GET['noteImg'])) {
     }
     if($noteId){
         try {
-            getNoteById($noteId, 'image');
+            getNoteById($noteId, 'image', $ignoreCache);
         } catch (Exception $e) {
             handleError($e->getMessage());
         }
@@ -59,7 +60,7 @@ else {
     $keyword = '#blog = true';
     global $redis;
     // 尝试从 Redis 中获取搜索结果
-    if ($redis->exists('searchResults')) {
+    if (!$ignoreCache && $redis->exists('searchResults')) {
         $searchResults = json_decode($redis->get('searchResults'), true);
     } else {
         // 如果 Redis 中没有搜索结果，则通过 API 搜索笔记
