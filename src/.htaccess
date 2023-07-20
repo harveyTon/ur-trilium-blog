@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule ^links.html$ /index.php?pageName=links [QSA,L]
+RewriteRule ^about.html$ /index.php?pageName=about [QSA,L]
+RewriteRule ^note/(.*).html$ /index.php?noteId=$1 [QSA,L]
