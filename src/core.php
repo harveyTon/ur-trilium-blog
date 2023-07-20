@@ -20,7 +20,7 @@ if (isset($_GET['noteImg'])) {
     $noteId = $matches[1];
     // 为 noteId 设置一个匹配模式
     // 如果 noteId 不匹配该模式，返回错误信息
-    if(!isValidNoteId($noteId)){
+    if(isValidNoteId($noteId)){
         try {
             getNoteById($noteId, 'image');
         } catch (Exception $e) {
