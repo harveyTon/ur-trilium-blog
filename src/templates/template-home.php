@@ -61,6 +61,11 @@ include __DIR__ . '/header.php';
                     loadBtn.textContent = "No More!";
                     loadBtn.style.backgroundColor = "gray";
                     loadBtn.style.color = "white";
+                    // 添加动画效果
+                    loadBtn.style.transition = 'opacity 3s ease';
+
+                    // 设置透明度为0
+                    loadBtn.style.opacity = '0';
                     setTimeout(function() {
                         loadBtn.style.display = 'none';
                     }, 3000);

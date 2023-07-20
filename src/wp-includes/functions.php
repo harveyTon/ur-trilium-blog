@@ -210,7 +210,6 @@ function replaceContent($content, $apiHost): array|string|null
     return $note;
 }
 
-
 // 错误处理函数
 function handleError($errorMessage) {
     // 输出错误信息
