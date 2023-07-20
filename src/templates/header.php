@@ -30,7 +30,7 @@
         <link rel="stylesheet" href="/wp-content/themes/urtrilium/libs/prism.css">
         <link rel="stylesheet" href="/wp-content/themes/urtrilium/libs/Artalk.css">
     <?php endif; ?>
-    <script defer data-domain="blog.uto.to" src="https://s.uto.to/js/script.js"></script>
+    <script defer data-domain="虎笺.com" src="https://s.uto.to/js/script.js"></script>
 </head>
 <body<?= $note ? ' class="line-numbers"' : '' ?>>
     <header>
