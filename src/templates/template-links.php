@@ -24,8 +24,8 @@ include __DIR__ . '/header.php';
 
             <div class="link link-text link-about-text">
                 <p>本站友情连接格式：</p>
-                <pre class="language-text-html" tabindex="0"><code class="language-text-html">网站名称：Tiger's Notes
-网站域名：https://blog.uto.to</code></pre>
+                <pre class="language-text-html" tabindex="0"><code class="language-text-html">网站名称：虎笺
+网站域名：https://虎笺.com</code></pre>
             </div>
         </div>
 
