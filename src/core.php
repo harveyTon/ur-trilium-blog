@@ -10,7 +10,8 @@ global $note, $pageName;
 $ignoreCache = isset($_GET['ignoreCache']);
 
 // 验证 noteId 的工具函数
-function isValidNoteId($noteId) {
+function isValidNoteId($noteId)
+{
     return preg_match("/^[A-Za-z\d]{12}$/", $noteId);
 }
 
@@ -20,9 +21,9 @@ if (isset($_GET['noteImg'])) {
     $noteId = $matches[1];
     // 为 noteId 设置一个匹配模式
     // 如果 noteId 不匹配该模式，返回错误信息
-    if(isValidNoteId($noteId)){
+    if (isValidNoteId($noteId)) {
         try {
-            getNoteById($noteId, 'image');
+            getNoteById($noteId, 'image', $ignoreCache);
         } catch (Exception $e) {
             handleError($e->getMessage());
         }
@@ -33,7 +34,7 @@ if (isset($_GET['noteImg'])) {
 // 处理 noteId 参数的逻辑
 elseif (isset($_GET['noteId']) && isValidNoteId($_GET['noteId'])) {
     $templateName = "note";
-    $note = getNoteById($_GET['noteId'], 'note');
+    $note = getNoteById($_GET['noteId'], 'note', $ignoreCache);
 }
 // 处理 pageName 参数的逻辑
 elseif (isset($_GET['pageName'])) {
