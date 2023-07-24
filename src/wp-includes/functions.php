@@ -135,8 +135,8 @@ function replaceContent($content, $apiHost): array|string|null
 
 
     // 匹配并替换语言标识
-    $content = preg_replace('/language-javascript-env-frontend/', 'language-javascript', $content);
-    $content = preg_replace('/language-javascript-env-backend/', 'language-javascript', $content);
+    $content = preg_replace('/language-application-javascript-env-frontend/', 'language-javascript', $content);
+    $content = preg_replace('/language-application-javascript-env-backend/', 'language-javascript', $content);
     $content = preg_replace('/language-text-x-sh/', 'language-bash', $content);
     $content = preg_replace('/language-text-x-java/', 'language-java', $content);
     $content = preg_replace('/language-text-x-php/', 'language-php', $content);
