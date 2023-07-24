@@ -1,6 +1,6 @@
 <?php
 // 开启所有错误报告
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 
 // 定义常量ROOT_DIR为当前目录的路径
 const ROOT_DIR = __DIR__;

@@ -30,31 +30,6 @@ function outputSvgFromString($svgContent, $imageKey): bool
     return true;
 }
 
-// 根据图片内容输出图片，并保存到Redis
-// function outputImageFromString($imageContent, $imageKey): bool
-// {
-//     global $redis;
-//     $image = @imagecreatefromstring($imageContent);
-
-//     if (!$image) {
-//         return false;
-//     }
-
-//     // 设置响应的内容类型为JPEG
-//     header('Content-Type: image/jpeg');
-
-//     // 输出图片
-//     if(imagejpeg($image)){
-//         // 如果成功输出，将图片内容保存到Redis，有效期为30天
-//         $redis->set($imageKey, $imageContent, 3600 * 24 * 30);
-//     }
-
-//     // 释放内存
-//     imagedestroy($image);
-
-//     return true;
-// }
-
 // 增加对GIF的支持，切换到Imagick处理图片
 // 统一输出格式为webp
 function outputImageFromString($imageContent, $imageKey): bool
