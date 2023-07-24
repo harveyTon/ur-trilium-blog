@@ -135,12 +135,14 @@ function replaceContent($content, $apiHost): array|string|null
 
 
     // 匹配并替换语言标识
-    $content = preg_replace('/language-([a-z-]+)-env-backend/', 'language-javascript', $content);
+    $content = preg_replace('/language-javascript-env-frontend/', 'language-javascript', $content);
+    $content = preg_replace('/language-javascript-env-backend/', 'language-javascript', $content);
     $content = preg_replace('/language-text-x-sh/', 'language-bash', $content);
     $content = preg_replace('/language-text-x-java/', 'language-java', $content);
     $content = preg_replace('/language-text-x-php/', 'language-php', $content);
     $content = preg_replace('/language-text-x-dockerfile/', 'language-dockerfile', $content);
-    
+    $content = preg_replace('/language-text-html/', 'language-html', $content);
+
     // img 添加 a
     return preg_replace_callback('/(<img[^>]+src="([^"]*)"[^>]*>)/i', function($matches) {
         // $matches[0] is the entire match
