@@ -31,28 +31,61 @@ function outputSvgFromString($svgContent, $imageKey): bool
 }
 
 // 根据图片内容输出图片，并保存到Redis
+// function outputImageFromString($imageContent, $imageKey): bool
+// {
+//     global $redis;
+//     $image = @imagecreatefromstring($imageContent);
+
+//     if (!$image) {
+//         return false;
+//     }
+
+//     // 设置响应的内容类型为JPEG
+//     header('Content-Type: image/jpeg');
+
+//     // 输出图片
+//     if(imagejpeg($image)){
+//         // 如果成功输出，将图片内容保存到Redis，有效期为30天
+//         $redis->set($imageKey, $imageContent, 3600 * 24 * 30);
+//     }
+
+//     // 释放内存
+//     imagedestroy($image);
+
+//     return true;
+// }
+
+// 增加对GIF的支持，切换到Imagick处理图片
 function outputImageFromString($imageContent, $imageKey): bool
 {
     global $redis;
-    $image = @imagecreatefromstring($imageContent);
 
-    if (!$image) {
+    try {
+        // 创建一个新的 Imagick 对象
+        $imagick = new Imagick();
+        $imagick->readImageBlob($imageContent);
+
+        // 根据图像格式设置响应的内容类型
+        $format = $imagick->getImageFormat();
+        if ($format == 'GIF') {
+            header('Content-Type: image/gif');
+            echo $imagick->getImagesBlob(); // 输出完整的 GIF 动画
+        } else {
+            header('Content-Type: image/jpeg');
+            echo $imagick->getImageBlob();
+        }
+
+        // 将图片内容保存到 Redis，有效期为 30 天
+        $redis->set($imageKey, $imageContent, 3600 * 24 * 30);
+
+        // 清除 Imagick 对象
+        $imagick->clear();
+        $imagick->destroy();
+
+        return true;
+    } catch (Exception $e) {
         return false;
     }
-
-    // 设置响应的内容类型为JPEG
-    header('Content-Type: image/jpeg');
-
-    // 输出图片
-    if(imagejpeg($image)){
-        // 如果成功输出，将图片内容保存到Redis，有效期为30天
-        $redis->set($imageKey, $imageContent, 3600 * 24 * 30);
-    }
-
-    // 释放内存
-    imagedestroy($image);
-
-    return true;
 }
 
 // 调用 API 并获取结果
