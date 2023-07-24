@@ -56,6 +56,7 @@ function outputSvgFromString($svgContent, $imageKey): bool
 // }
 
 // 增加对GIF的支持，切换到Imagick处理图片
+// 统一输出格式为webp
 function outputImageFromString($imageContent, $imageKey): bool
 {
     global $redis;
@@ -67,11 +68,24 @@ function outputImageFromString($imageContent, $imageKey): bool
 
         // 根据图像格式设置响应的内容类型
         $format = $imagick->getImageFormat();
+
+        // 设置压缩质量 (范围为 0 到 100，数字越小压缩越高，但图像质量下降)
+        $compressionQuality = 80; 
+        $imagick->setImageCompressionQuality($compressionQuality);
+
         if ($format == 'GIF') {
-            header('Content-Type: image/gif');
-            echo $imagick->getImagesBlob(); // 输出完整的 GIF 动画
+            header('Content-Type: image/webp');
+            
+            // 转换 GIF 为 WebP 动图
+            $imagick->setImageFormat('webp');
+            
+            echo $imagick->getImagesBlob(); // 输出为 WebP 动图
         } else {
-            header('Content-Type: image/jpeg');
+            header('Content-Type: image/webp');
+            
+            // 转换其他图像为 WebP
+            $imagick->setImageFormat('webp');
+            
             echo $imagick->getImageBlob();
         }
 
