@@ -1,7 +1,6 @@
 <?php
 
 // 加载配置文件，并获取相关的配置信息
-use JetBrains\PhpStorm\NoReturn;
 
 $config = require_once ROOT_DIR . '/config/config.php';
 $apiToken = $config['apiToken'];
@@ -235,7 +234,7 @@ function replaceContent($content, $apiHost): array|string|null
 }
 
 // 错误处理函数
-#[NoReturn] function handleError($errorMessage): void
+function handleError($errorMessage): void
 {
     // 输出错误信息
     echo $errorMessage;

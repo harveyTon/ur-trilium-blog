@@ -1,5 +1,5 @@
 <?php
-// 开启所有错误报告
+// 关闭所有错误报告
 ini_set('display_errors', 0);
 
 // 定义常量ROOT_DIR为当前目录的路径
